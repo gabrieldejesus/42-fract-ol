@@ -6,7 +6,7 @@
 #    By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 14:50:00 by gde-jesu          #+#    #+#              #
-#    Updated: 2023/09/16 15:50:53 by gde-jesu         ###   ########.fr        #
+#    Updated: 2023/09/17 21:12:09 by gde-jesu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ bonus:
 
 clean:
 	@$(RM) $(MANDATORY_OBJS) $(BONUS_OBJS)
-	@printf "$(_INFO) cleaning done.\n"
+	@printf "$(_INFO) libft cleaning done.\n"
 
 fclean: clean
 	@$(RM) $(NAME)

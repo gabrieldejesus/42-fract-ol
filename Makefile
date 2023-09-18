@@ -6,7 +6,7 @@
 #    By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 09:36:22 by gde-jesu          #+#    #+#              #
-#    Updated: 2023/09/17 21:02:36 by gde-jesu         ###   ########.fr        #
+#    Updated: 2023/09/17 21:14:17 by gde-jesu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,12 +60,12 @@ bonus:
 
 clean:
 	@$(RM) $(MANDATORY_OBJS) $(BONUS_OBJS)
-	@$(MAKE) clean $(LIBFT_DIR)
-	@printf "$(_INFO) cleaning done.\n"
+	@$(MAKE) -C $(LIBFT_DIR) clean
+	@printf "$(_INFO) fract-ol cleaning done.\n"
 
 fclean:	clean
 	@$(RM) $(NAME)
-	@$(MAKE) fclean $(LIBFT_DIR)
+	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 re:		fclean all
 
