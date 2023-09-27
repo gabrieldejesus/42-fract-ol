@@ -6,7 +6,7 @@
 /*   By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 17:53:27 by gde-jesu          #+#    #+#             */
-/*   Updated: 2023/09/02 11:06:38 by gde-jesu         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:31:20 by gde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,17 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-/* Bonus functions */
+/* Mandatory ft_printf functions */
+int		ft_printf(const char *string, ...);
+void	ft_putstr(char *str);
+int		ft_putchar(char c);
+int		ft_flag_s(va_list args);
+size_t	ft_flag_u(unsigned int number);
+size_t	ft_flags_di(int number);
+size_t	ft_flag_x(unsigned long number, char select);
+int		ft_flag_p(unsigned long number);
+
+/* Bonus libft functions */
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

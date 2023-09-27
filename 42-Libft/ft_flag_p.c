@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flags_di.c                                      :+:      :+:    :+:   */
+/*   ft_flag_p.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/06 21:23:56 by gde-jesu          #+#    #+#             */
-/*   Updated: 2022/07/07 00:12:00 by gde-jesu         ###   ########.fr       */
+/*   Created: 2022/07/07 01:19:24 by gde-jesu          #+#    #+#             */
+/*   Updated: 2023/09/27 11:27:33 by gde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-size_t	ft_flags_di(int number)
+int	ft_flag_p(unsigned long number)
 {
-	size_t		lenght;
-	long int	i;
+	size_t	lenght;
 
-	i = number;
 	lenght = 0;
-	if (i < 0)
-	{
-		lenght += ft_putchar('-');
-		i *= -1;
-	}
-	if (i >= 10)
-		lenght += ft_flags_di(i / 10);
-	lenght += ft_putchar((i % 10) + '0');
+	lenght += ft_putchar('0');
+	lenght += ft_putchar('x');
+	lenght += ft_flag_x(number, 'x');
 	return (lenght);
 }

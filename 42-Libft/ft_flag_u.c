@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_flag_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/04 22:53:34 by gde-jesu          #+#    #+#             */
-/*   Updated: 2022/07/06 07:54:11 by gde-jesu         ###   ########.fr       */
+/*   Created: 2022/07/06 10:31:43 by gde-jesu          #+#    #+#             */
+/*   Updated: 2023/09/27 11:27:38 by gde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putchar(char c)
+size_t	ft_flag_u(unsigned int number)
 {
-	return (write(1, &c, 1));
+	size_t	lenght;
+
+	lenght = 0;
+	if (number >= 10)
+		lenght += ft_flag_u(number / 10);
+	lenght += ft_putchar((number % 10) + '0');
+	return (lenght);
 }

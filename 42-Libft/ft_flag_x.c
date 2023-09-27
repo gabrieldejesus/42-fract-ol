@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flag_p.c                                        :+:      :+:    :+:   */
+/*   ft_flag_x.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/07 01:19:24 by gde-jesu          #+#    #+#             */
-/*   Updated: 2022/07/07 01:30:36 by gde-jesu         ###   ########.fr       */
+/*   Created: 2022/07/06 23:03:14 by gde-jesu          #+#    #+#             */
+/*   Updated: 2023/09/27 11:27:40 by gde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_flag_p(unsigned long number)
+size_t	ft_flag_x(unsigned long number, char select)
 {
-	size_t	lenght;
+	unsigned long	lenght;
+	int				cap;
 
+	cap = 0;
 	lenght = 0;
-	lenght += ft_putchar('0');
-	lenght += ft_putchar('x');
-	lenght += ft_flag_x(number, 'x');
+	if (select == 'x')
+		cap = 32;
+	if (number >= 16)
+		lenght += ft_flag_x(number / 16, select);
+	if (number % 16 >= 10)
+		lenght = lenght + ft_putchar(((number % 16) - 10) + ('A' + cap));
+	else
+		lenght += ft_putchar((number % 16) + '0');
 	return (lenght);
 }

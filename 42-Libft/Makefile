@@ -6,7 +6,7 @@
 #    By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 14:50:00 by gde-jesu          #+#    #+#              #
-#    Updated: 2023/09/27 11:01:07 by gde-jesu         ###   ########.fr        #
+#    Updated: 2023/09/27 11:31:03 by gde-jesu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,9 @@ ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
 ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+ft_printf.c ft_putchar.c ft_putstr.c ft_flag_s.c \
+ft_flag_u.c ft_flags_di.c ft_flag_x.c ft_flag_p.c
 
 BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
 ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
@@ -60,8 +62,10 @@ clean:
 	@$(RM) $(MANDATORY_OBJS) $(BONUS_OBJS)
 	@printf "$(_INFO) libft cleaning done.\n"
 
-fclean: clean
+fclean:
 	@$(RM) $(NAME)
+	@$(RM) $(MANDATORY_OBJS) $(BONUS_OBJS)
+	@printf "$(_INFO) libft cleaning done.\n"
 
 re: fclean all
 
