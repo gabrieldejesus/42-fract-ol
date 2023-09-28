@@ -6,7 +6,7 @@
 #    By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 09:36:22 by gde-jesu          #+#    #+#              #
-#    Updated: 2023/09/27 12:43:18 by gde-jesu         ###   ########.fr        #
+#    Updated: 2023/09/28 11:03:34 by gde-jesu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ bonus:
 	@$(MAKE) -C $(LIBFT_DIR) bonus
 	@$(MAKE) -C mlx all &> /dev/null
 	@$(CC) $(CFLAGS) $(BONUS_SRCS) $(LIBFT) $(INC) -Ofast -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-	@printf "$(_SUCCESS) fract-ol.\n"
+	@printf "$(_SUCCESS) fract-ol bonus.\n"
 
 clean:
 	@$(MAKE) -C $(LIBFT_DIR) clean
@@ -64,4 +64,4 @@ fclean:
 
 re:		fclean all
 
-.PHONY:	all clean fclean re 
+.PHONY:	all clean fclean re bonus

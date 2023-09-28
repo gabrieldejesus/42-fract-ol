@@ -6,7 +6,7 @@
 #    By: gde-jesu <gde-jesu@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 14:50:00 by gde-jesu          #+#    #+#              #
-#    Updated: 2023/09/27 11:31:03 by gde-jesu         ###   ########.fr        #
+#    Updated: 2023/09/28 10:26:55 by gde-jesu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ all: $(NAME)
 bonus:
 	@$(CC) $(CFLAGS) -I. $(BONUS_SRCS)
 	@$(ARC) $(NAME) $(BONUS_OBJS)
-	@printf "$(_SUCCESS) libft.\n"
+	@printf "$(_SUCCESS) libft bonus.\n"
 
 clean:
 	@$(RM) $(MANDATORY_OBJS) $(BONUS_OBJS)
